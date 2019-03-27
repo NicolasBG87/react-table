@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Table from "./components/Table";
+
+import Data from "./MOCK_DATA.json";
+
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+    font-family: 'Lato', sans-serif;
   }
-}
+  * {
+    box-sizing: border-box;
+    outline: none;
+    padding: 0;
+    margin: 0;
+  }
+`;
+
+const App = () => {
+  return (
+    <div>
+      <Header />
+      <Table tableData={Data} />
+      <Footer />
+      <GlobalStyle />
+    </div>
+  );
+};
 
 export default App;
