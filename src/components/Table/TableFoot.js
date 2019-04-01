@@ -86,7 +86,7 @@ const TableFoot = ({
               />
             </div>
             <div>
-              <span onClick={e => setCurrentPage(0)}>
+              <span onClick={e => setCurrentPage(1)}>
                 {icon.arrowDoubleLeft()}
               </span>
               <span onClick={e => setCurrentPage(currentPage - 1)}>
@@ -105,7 +105,7 @@ const TableFoot = ({
                       : null
                   }
                 />
-                of {Math.round(pages)}
+                of {pages > 1 ? Math.round(pages) : 1}
               </span>
               <span onClick={e => setCurrentPage(currentPage + 1)}>
                 {icon.arrowRight()}

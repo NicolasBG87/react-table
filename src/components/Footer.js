@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Footer = () => {
-  return <Container>{new Date().getFullYear()} by Rzasa!</Container>;
+  return <Container>{new Date().getFullYear()} by Nikola Bojanovic</Container>;
 };
 
 export default Footer;
